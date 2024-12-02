@@ -4,6 +4,9 @@ import {collection , getDocs, setDoc, doc, orderBy, query } from 'firebase/fires
 import { Link } from 'react-router-dom'
 import { Player, ArrowObject } from './Board';
 import BoardList from './components/BoardList';
+import ShareIcon from '@mui/icons-material/Share';
+import ThumbUpAltSharpIcon from '@mui/icons-material/ThumbUpAltSharp';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 
 type Props = {
     user:any
@@ -127,6 +130,7 @@ const Home:React.FC<Props> = (props) => {
                            }}
                            onClick={() => setActive(0)}
                         >
+                            <ShareIcon sx={{marginRight : 2}}/>
                             Share Board
                         </p>
                     </div>
@@ -138,6 +142,7 @@ const Home:React.FC<Props> = (props) => {
                                  }}
                             onClick={() => setActive(1)}
                         >
+                            <HomeSharpIcon sx={{marginRight: 2}} />
                             My Board
                         </p>
                     </div>
@@ -149,6 +154,7 @@ const Home:React.FC<Props> = (props) => {
                                  }}
                            onClick={() => setActive(2)}
                         >
+                            <ThumbUpAltSharpIcon sx={{marginRight : 2}}/>
                             Saved Board
                         </p>
                     </div>

@@ -25,6 +25,7 @@ const LinkToBoard:React.FC<Props> = (props) => {
     const [alreadySaved, setAlreadySaved] = useState(false)
 
     useEffect(() => {
+        
         if (auth.currentUser) {
             if (props.board.good.indexOf(auth.currentUser.uid) >= 0) {
                 setGooded(true);
@@ -80,7 +81,7 @@ const LinkToBoard:React.FC<Props> = (props) => {
 
 
     return (
-        <div className="rounded-[20px] w-[24%] border-2 border-black shadow-md h-[160px] bg-white mr-[0.5%] ml-[0.5%]
+        <div className="rounded-[20px] w-[24%] min-w-[140px] border-2 border-black shadow-md h-[160px] bg-white mr-[0.5%] ml-[0.5%]
                         btn flex flex-col items-center justify-start overflow-hidden z-10 hover:border-orange-400 relative"    
              style={{backgroundColor: props.board.boardType === 'オフェンス'   ? 'rgb(220 38 38)' :
                                       props.board.boardType === 'ディフェンス' ? 'rgb(37 99 235)' 

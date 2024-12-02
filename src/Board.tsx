@@ -19,6 +19,7 @@ import ArrowList from './components/ArrowList';
 import { useSearchParams } from 'react-router-dom';
 import {collection, getDocs,  } from 'firebase/firestore'
 import { PropertyDescriptorParsingType } from 'html2canvas/dist/types/css/IPropertyDescriptor';
+import CopyToClipboard from './components/CopyToClipboard';
 
 
 export type Player = {
@@ -291,15 +292,8 @@ const Board:React.FC<Props> = (props) => {
             <Tab label="HALF COURT" sx={{color:'white'}} />
             
             <div className='flex items-center  justify-end w-full'>
-              <div className='h-full flex justify-center items-center 
-                             absolute left-[30%]'
-              >
-                <p className='text-white font-black'
-                   style={{fontSize: window.innerWidth < 850 ? 12: 16}}
-                >
-                  ID : {boardKey}
-                </p>
-              </div>
+              <CopyToClipboard value={boardKey}/>
+              
               { (props.type === 'create' || props.type === 'edit') &&
                 <p className='bg-red-500 absolute left-[70%] flex items-center px-2 py-1 btn 
                               rounded-full hover:bg-white text-white hover:text-red-500 font-black'
